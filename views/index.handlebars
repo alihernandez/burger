@@ -5,8 +5,8 @@
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-    <h1>These aren't devoured</h1>
     <p>{{this.burger_name}}</p>
+    {{> burgers/burger-block.handlebars ate=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -16,8 +16,8 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-<h1>These are devoured</h1>
 <p>{{this.burger_name}}</p>
+{{> burgers/burger-block.handlebars ate=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -32,8 +32,8 @@
 
   <div class="form-group">
     <label for="devoured">Available?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not Yet Devoured!
+    <input type="radio" name="ate" value="1" checked> Devoured!<br>
+    <input type="radio" name="ate" value="0"> Not Yet Devoured!
   </div>
 
   <button type="submit">Add Burger</button>
@@ -41,13 +41,3 @@
 
   
 </form>
-
-<li>
-	{{name}}
-
-	<button class="devour" data-id="{{id}}" data-newDevour="{{devour}}">
-		{{#if devoured}}Devoured{{else}}Available!{{/if}}
-	</button>
-
-	{{!-- <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
-</li> --}}

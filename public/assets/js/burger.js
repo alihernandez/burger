@@ -27,7 +27,7 @@ $(function() {
       
       var newBurger = {
         name: $("#bu").val().trim(),
-        available: $("[name=devoured]:checked").val()
+        devoured: $("[name=ate]:checked").val()
       };
       console.log("new burger", newBurger);
   
