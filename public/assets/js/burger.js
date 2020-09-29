@@ -2,7 +2,8 @@
 $(function() {
     $(".devour").on("click", function(event) {
       var id = $(this).data("id");
-      var newDevour = $(this).data("newDevour");
+      var newDevour = $(this).data("newdevour");
+      console.log(newDevour);
   
       var newDevourState = {
         devoured: newDevour
@@ -27,7 +28,7 @@ $(function() {
       
       var newBurger = {
         name: $("#bu").val().trim(),
-        devoured: $("[name=ate]:checked").val()
+        devoured: $("[name=ate]:checked").val().trim()
       };
       console.log("new burger", newBurger);
   
