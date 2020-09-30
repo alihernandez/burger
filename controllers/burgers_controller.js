@@ -16,9 +16,12 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create(["burger_name", "devoured"], [req.body.name, req.body.newDevour], function(result) {
+  console.log("This is the body of creating a burger")
+  console.log(req.body)
+  burger.create(["burger_name", "devoured"], [req.body.name, req.body.devoured], function(result) {
+    console.log(req.body.ate)
     console.log(result)
-    console.log(req.body.devoured)
+    
     res.json({ id: result.insertID });
 });
 });
